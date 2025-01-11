@@ -36,6 +36,16 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 /*
+The function compares the first n bytes 
+(each interpreted as unsigned char) of 
+the memory areas s1 and s2.
+
+The function returns an integer less than,
+equal to, or greater than zero if the first
+n bytes of s1 is found, respectively, to be 
+less than, to match, or be greater than the 
+first n bytes of s2.
+
 Same as above, in a fancy way.
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

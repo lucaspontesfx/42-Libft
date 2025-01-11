@@ -30,6 +30,20 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	return (ft_strlen(src));
 }
 /*
+The function copies up to size - 1
+characters from the NUL-terminated 
+string src to dst, NUL-terminating 
+the result.
+
+Return the total len of the string we
+will try to create. The total len of src.
+(Important) We must return the len of src, 
+because we need to inform the len of the 
+srting that will be copied in the destination.
+
+#include <stdio.h>
+#include "ft_strlen.c"
+
 int	main(void)
 {
 	char	name[] = "There we go";

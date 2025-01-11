@@ -27,7 +27,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	i = 0;
 	if (dest_len < size - 1 && size > 0)
 	{
-		while (src[i] && dest_len + 1 < size - 1)
+		while (src[i] && j < size - 1)
 		{
 			dest[j] = src[i];
 			j++;
@@ -40,6 +40,21 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	return (dest_len + src_len);
 }
 /*
+The function safely concatanate the string src
+to the end of dest, esuring that the result is 
+Null terminated, as long as there is at least
+ine byte of space in dest. It takes the total 
+buffer size of dest as an argument, not just
+the space available, and adds as many characters
+as possible from src, without exceeding size - 1
+to leave the space to the Null terminator.
+
+The function returns the total len that the new
+string would have if there were enough space in
+dest for the entire src.
+
+#include <stdio.h>
+#include "ft_strlen.c"
 int	main(void)
 {
 	char	s1[] = "Lucas";

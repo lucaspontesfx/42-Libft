@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	size;
 	char	*dest;
 
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 	{
 		return (NULL);
 	}
@@ -35,14 +35,21 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		dest[i] = s1[i];
 	while (s2[j] != '\0')
 		dest[i++] = s2[j++];
-	dest[i + j] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }
 /*
+The function Allocates (with malloc(3))
+and returns a new string, which is the
+result of the concatenation of ’s1’ and ’s2’.
+
+The function returns The new string.
+Or NULL if the allocation fails.
+
 int	main(void)
 {
-	char	*string = "1234";
-	char	*string2 = "abc";
+	char	*string = "Lucas ";
+	char	*string2 = "Pontes";
 	char	*name;
 
 	
@@ -64,6 +71,7 @@ int	main(void)
 	printf("%c", name[12]);
 	printf("%c", name[13]);
 	printf("%c", name[14]);
+	free(name);
 
 	return (0);
 }

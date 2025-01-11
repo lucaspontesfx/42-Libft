@@ -15,22 +15,21 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	int		i;
+	size_t	size_str;
 	char	*str;
 
+	size_str = ft_strlen(s);
 	if (!s)
 	{
 		return (NULL);
 	}
 	if (start >= (unsigned int)ft_strlen((char *)s))
 	{
-		str = (char *) malloc(1);
-		if (!str)
-		{
-			return (NULL);
-		}
-		str[0] = '\0';
+		str = (char *)ft_calloc(1, sizeof(char));
 		return (str);
 	}
+	if (len > size_str - start)
+		len = size_str - start;
 	str = (char *) malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
@@ -41,13 +40,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 /*
+#include "ft_calloc.c"
+#include "ft_bzero.c"
+#include <stdio.h>
 int	main()
 {
 	char	f_name[] = "Jhon Carter";
 	char	*name;
 	
 	printf("%s\n", f_name);
-	name = ft_substr(f_name, 0, 4);
+	name = ft_substr(f_name, 6, 4);
 	printf("%s\n", name);
 	free(name);
 	return (0);

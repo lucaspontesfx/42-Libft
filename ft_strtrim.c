@@ -41,24 +41,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trimmed);
 }
 /*
+#include <stdio.h>
+#include "ft_strchr.c"
+#include "ft_strlen.c"
+
 int	main(void)
 {
-	
-	
 	//char	*nome = NULL;
-	char	name[] = "bbaabbaaaa1aaaaa2bbbbb3aaabbaab";
-	char	trsh[] = "a";
+	char	name[] = "abcLucasabc";
+	char	trsh[] = "abc";
 	char	*trimmed;
 	
 	trimmed = ft_strtrim(name, trsh);
 	printf("%s\n\n\n", trimmed);
 	free(trimmed);
-	
-	//Test2 no char to remove
-	char name2[] = "aaaaasbbb123456aaaaaabbb";
-	char trsh2[] = "ab";
-	trimmed = ft_strtrim(name2, trsh2);
-	if (trimmed)
 	
 	return (0);
 }

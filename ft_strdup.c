@@ -34,6 +34,19 @@ char	*ft_strdup(const char *src)
 	return (dest);
 }
 /*
+The function returns a pointer to a new string 
+which is a duplicate of the string s.  Memory 
+for the new string is obtained with malloc(3), 
+and must befreed with free(3).
+
+The function returns a pointer to the duplicated
+string.  It returns NULL if insufficient memory 
+was available, with errno set to indicate the 
+cause of the error.
+
+#include <stdio.h>
+#include "ft_strlen.c"
+
 int	main(void)
 {
 	char	s1[] = "Lucas";
@@ -64,12 +77,13 @@ ALternative main
 int	main(void)
 {
 	char	s1[] = "Lucas";
-	char	s2;
+	char	*s2;
 	
 	printf("%s\n", s1);
 	s2 = printf("%s\n", ft_strdup(s1));
 	printf("%c\n", s2);
+	free(s2);
 	return (0);
-	
+
 }
 */
