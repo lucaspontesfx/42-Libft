@@ -52,4 +52,42 @@ int	main(void)
 
 	return (0);
 }
+int	main(void)
+{
+	int	nb = 10;
+	int	nb2 = 20;
+	int	nb3 = 5;
+	int	nb4 = 500;
+	t_node	*head = NULL;
+	t_node	*n = new_node(&nb);
+	t_node	*n2 = new_node(&nb2);
+	t_node	*n3 = new_node(&nb3);
+	t_node	*n4 = new_node(&nb4);
+
+	ft_addfront(&head, n);
+	ft_addfront(&head, n2);
+	ft_addfront(&head, n3);
+	ft_addfront(&head, n4);
+
+
+	t_node	*i = head;
+	while (i)
+	{
+		printf("Node: %d\n", *(int *)i->content);
+		i = i->next;
+	}
+
+	free(n);
+	free(n2);
+	free(n3);
+	free(n4);
+	return (0);
+
+
+
+
+
+}
+
+
 */
